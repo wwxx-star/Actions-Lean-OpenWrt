@@ -15,9 +15,9 @@ sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generat
 sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-settings
 
 # 修正Lean大发行版软件源（注释掉原修改）
-#sed -i 's/^\(.*downloads.openwrt.org\)/#&/' package/lean/default-settings/files/zzz-default-settings
-#sed -i 's/^\(.*http:\)/#&/' package/lean/default-settings/files/zzz-default-settings
-#sed -i 's/^\(.*openwrt_luci\)/#&/' package/lean/default-settings/files/zzz-default-settings
+sed -i 's/^\(.*downloads.openwrt.org\)/#&/' package/lean/default-settings/files/zzz-default-settings
+sed -i 's/^\(.*http:\)/#&/' package/lean/default-settings/files/zzz-default-settings
+sed -i 's/^\(.*openwrt_luci\)/#&/' package/lean/default-settings/files/zzz-default-settings
 
 # 修改Lean大发行版软件源（snapshots改成releases/19.07-SNAPSHOT）
 #sed -i 's#snapshots#releases/19.07-SNAPSHOT#g' package/lean/default-settings/files/zzz-default-settings
@@ -28,7 +28,8 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 #rm -rf feeds/telephony/net/freeswitch-stable-mod-bcg729
 
 # 补全lienol大luci源smartdns缺失的插件核心
-#svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns package/lienol/smartdns
+svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns package/lienol/smartdns
+svn co https://github.com/Lienol/openwrt-luci/trunk/applications/luci-app-smartdns package/lienol/luci-app-smartdns
 
 # lienol大的passwall插件及依赖
 svn co https://github.com/Lienol/openwrt-package/trunk/package/brook package/lienol/brook
