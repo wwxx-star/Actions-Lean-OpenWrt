@@ -30,7 +30,7 @@ sed -i 's/^\(.*openwrt_luci\)/#&/' package/lean/default-settings/files/zzz-defau
 # 补全lienol大luci源smartdns缺失的插件核心
 svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns package/lienol/smartdns
 
-luci-app-smartdns插件
+# luci-app-smartdns插件
 svn co https://github.com/Lienol/openwrt-luci/trunk/applications/luci-app-smartdns package/lienol/luci-app-smartdns
 
 # lienol大的passwall插件及依赖
