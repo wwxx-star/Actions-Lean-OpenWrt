@@ -44,4 +44,5 @@ svn co https://github.com/Lienol/openwrt-package/trunk/package/tcping package/li
 #svn co https://github.com/Lienol/openwrt-package/trunk/package/simple-obfs package/lienol/simple-obfs
 #svn co https://github.com/Lienol/openwrt-package/trunk/package/v2ray package/lienol/v2ray
 #svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan package/lienol/trojan
+svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan-go package/lienol/trojan-go
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/lienol/luci-app-passwall
