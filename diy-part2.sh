@@ -24,10 +24,8 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 #rm -rf feeds/telephony/net/freeswitch-stable
 #rm -rf feeds/telephony/net/freeswitch-stable-mod-bcg729
 
-# 补全lienol大luci源smartdns缺失的插件核心
+# lienol大smartdns及luci-app-smartdns插件
 svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns package/lienol/smartdns
-
-# luci-app-smartdns插件
 svn co https://github.com/Lienol/openwrt-luci/trunk/applications/luci-app-smartdns package/lienol/luci-app-smartdns
 
 # lienol大的passwall插件及依赖
