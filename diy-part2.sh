@@ -19,13 +19,7 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 #sed -i 's/^\(.*http:\)/#&/' package/lean/default-settings/files/zzz-default-settings
 #sed -i 's/^\(.*openwrt_luci\)/#&/' package/lean/default-settings/files/zzz-default-settings
 
-# 删除lienol大luci缺失插件
-#rm -rf feeds/luci/applications/luci-app-https-dns-proxy
-#rm -rf feeds/telephony/net/freeswitch-stable
-#rm -rf feeds/telephony/net/freeswitch-stable-mod-bcg729
-
-# lienol大smartdns及luci-app-smartdns插件
-svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns package/lienol/smartdns
+# 下载lienol大uci-app-smartdns插件
 svn co https://github.com/Lienol/openwrt-luci/trunk/applications/luci-app-smartdns package/lienol/luci-app-smartdns
 
 # lienol大的passwall插件及依赖
