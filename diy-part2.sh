@@ -20,8 +20,7 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 #sed -i 's/^\(.*openwrt_luci\)/#&/' package/lean/default-settings/files/zzz-default-settings
 
 # 删除Lean大trojan插件
-rm -rf package/feeds/packages/smartdns
-rm -rf feeds/packages/net/smartdns
+rm -rf package/lean/trojan
 
 # 下载lienol大uci-app-smartdns插件
 svn co https://github.com/Lienol/openwrt-luci/trunk/applications/luci-app-smartdns package/lienol/luci-app-smartdns
