@@ -19,7 +19,7 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 #sed -i 's/^\(.*http:\)/#&/' package/lean/default-settings/files/zzz-default-settings
 #sed -i 's/^\(.*openwrt_luci\)/#&/' package/lean/default-settings/files/zzz-default-settings
 
-# 删除Lean大trojan插件
+# 删除Lean大trojan原版插件
 rm -rf package/lean/trojan
 
 # 下载lienol大uci-app-smartdns插件
