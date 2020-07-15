@@ -22,13 +22,8 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 # 删除原版trojan插件
 rm -rf package/lean/trojan
 
-# 删除原版smartdns插件
-rm -rf package/feeds/packages/smartdns
-rm -rf feeds/packages/net/smartdns
-
-# 拉取smartdns及uci-app-smartdns插件
-svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns package/lienol/smartdns
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
+# 拉取luci-app-smartdns插件
+svn co https://github.com/Lienol/openwrt-luci/trunk/applications/luci-app-smartdns package/lienol/luci-app-smartdns
 
 # 拉取passwall插件及依赖
 svn co https://github.com/Lienol/openwrt-package/trunk/package/brook package/lienol/brook
