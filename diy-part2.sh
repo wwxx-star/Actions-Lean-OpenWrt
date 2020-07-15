@@ -19,10 +19,10 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 #sed -i 's/^\(.*http:\)/#&/' package/lean/default-settings/files/zzz-default-settings
 #sed -i 's/^\(.*openwrt_luci\)/#&/' package/lean/default-settings/files/zzz-default-settings
 
-# 删除Lean大trojan原版插件
+# 删除原版trojan插件
 rm -rf package/lean/trojan
 
-# 删除Lean大smartdns原版插件
+# 删除原版smartdns插件
 rm -rf package/feeds/packages/smartdns
 rm -rf feeds/packages/net/smartdns
 
@@ -30,7 +30,7 @@ rm -rf feeds/packages/net/smartdns
 svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns package/lienol/smartdns
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
 
-# lienol大的passwall插件及依赖
+# 拉取passwall插件及依赖
 svn co https://github.com/Lienol/openwrt-package/trunk/package/brook package/lienol/brook
 svn co https://github.com/Lienol/openwrt-package/trunk/package/chinadns-ng package/lienol/chinadns-ng
 svn co https://github.com/Lienol/openwrt-package/trunk/package/openssl1.1 package/lienol/openssl1.1
