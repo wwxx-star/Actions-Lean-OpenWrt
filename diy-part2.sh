@@ -14,11 +14,6 @@ sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generat
 # 取消Lean大登陆密码
 sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-settings
 
-# 修正Lean大发行版软件源（注释掉原修改）
-#sed -i 's/^\(.*downloads.openwrt.org\)/#&/' package/lean/default-settings/files/zzz-default-settings
-#sed -i 's/^\(.*http:\)/#&/' package/lean/default-settings/files/zzz-default-settings
-#sed -i 's/^\(.*openwrt_luci\)/#&/' package/lean/default-settings/files/zzz-default-settings
-
 # 删除原版trojan插件
 rm -rf package/lean/trojan
 
