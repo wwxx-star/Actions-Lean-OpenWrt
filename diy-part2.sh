@@ -15,7 +15,7 @@ sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generat
 sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-settings
 
 # 删除原版trojan插件
-#rm -rf package/lean/trojan
+rm -rf package/lean/trojan
 
 # 拉取luci-app-smartdns插件
 svn co https://github.com/Lienol/openwrt-luci/trunk/applications/luci-app-smartdns package/lienol/luci-app-smartdns
