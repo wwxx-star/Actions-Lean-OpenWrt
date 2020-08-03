@@ -30,9 +30,9 @@ svn co https://github.com/Lienol/openwrt-package/trunk/package/tcping package/li
 #svn co https://github.com/Lienol/openwrt-package/trunk/package/pdnsd-alt package/lienol/pdnsd-alt
 #svn co https://github.com/Lienol/openwrt-package/trunk/package/kcptun package/lienol/kcptun
 #svn co https://github.com/Lienol/openwrt-package/trunk/package/shadowsocksr-libev package/lienol/shadowsocksr-libev
-#svn co https://github.com/Lienol/openwrt-package/trunk/package/v2ray-plugin package/lienol/v2ray-plugin
 #svn co https://github.com/Lienol/openwrt-package/trunk/package/simple-obfs package/lienol/simple-obfs
+#svn co https://github.com/Lienol/openwrt-package/trunk/package/v2ray-plugin package/lienol/v2ray-plugin
 #svn co https://github.com/Lienol/openwrt-package/trunk/package/v2ray package/lienol/v2ray
-svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan-plus package/lienol/trojan-plus
 svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan-go package/lienol/trojan-go
+svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan-plus package/lienol/trojan-plus
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/lienol/luci-app-passwall
