@@ -21,18 +21,20 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 svn co https://github.com/Lienol/openwrt-luci/trunk/applications/luci-app-smartdns package/lienol/luci-app-smartdns
 
 # 拉取passwall插件及依赖
-svn co https://github.com/Lienol/openwrt-package/trunk/package/brook package/lienol/brook
-svn co https://github.com/Lienol/openwrt-package/trunk/package/chinadns-ng package/lienol/chinadns-ng
-svn co https://github.com/Lienol/openwrt-package/trunk/package/openssl1.1 package/lienol/openssl1.1
-svn co https://github.com/Lienol/openwrt-package/trunk/package/tcping package/lienol/tcping
-#svn co https://github.com/Lienol/openwrt-package/trunk/package/dns2socks package/lienol/dns2socks
-#svn co https://github.com/Lienol/openwrt-package/trunk/package/ipt2socks package/lienol/ipt2socks
-#svn co https://github.com/Lienol/openwrt-package/trunk/package/pdnsd-alt package/lienol/pdnsd-alt
-#svn co https://github.com/Lienol/openwrt-package/trunk/package/kcptun package/lienol/kcptun
-#svn co https://github.com/Lienol/openwrt-package/trunk/package/shadowsocksr-libev package/lienol/shadowsocksr-libev
-#svn co https://github.com/Lienol/openwrt-package/trunk/package/simple-obfs package/lienol/simple-obfs
-#svn co https://github.com/Lienol/openwrt-package/trunk/package/v2ray-plugin package/lienol/v2ray-plugin
-#svn co https://github.com/Lienol/openwrt-package/trunk/package/v2ray package/lienol/v2ray
-svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan-go package/lienol/trojan-go
-svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan-plus package/lienol/trojan-plus
-svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/lienol/luci-app-passwall
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/brook package/lienol/brook
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/chinadns-ng package/lienol/chinadns-ng
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/openssl1.1 package/lienol/openssl1.1
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/tcping package/lienol/tcping
+#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/dns2socks package/lienol/dns2socks
+#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/ipt2socks package/lienol/ipt2socks
+#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/pdnsd-alt package/lienol/pdnsd-alt
+#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/kcptun package/lienol/kcptun
+#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/shadowsocksr-libev package/lienol/shadowsocksr-libev
+#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/v2ray package/lienol/v2ray
+#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/simple-obfs package/lienol/simple-obfs
+#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/v2ray-plugin package/lienol/v2ray-plugin
+#svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan package/lienol/trojan
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-go package/lienol/trojan-go
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-plus package/lienol/trojan-plus
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/naiveproxy package/lienol/naiveproxy
+svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/lienol/luci-app-passwall
