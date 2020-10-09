@@ -34,6 +34,7 @@ svn co https://github.com/xiaorouji/openwrt-package/trunk/package/tcping package
 #svn co https://github.com/xiaorouji/openwrt-package/trunk/package/simple-obfs package/lienol/simple-obfs
 #svn co https://github.com/xiaorouji/openwrt-package/trunk/package/v2ray-plugin package/lienol/v2ray-plugin
 #svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan package/lienol/trojan
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/ssocks package/lienol/ssocks
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-go package/lienol/trojan-go
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-plus package/lienol/trojan-plus
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/naiveproxy package/lienol/naiveproxy
