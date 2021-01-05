@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Lean OpenWrt
+name: Lean openwrt
 
 on:
   repository_dispatch:
@@ -18,11 +18,9 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
-#  schedule:
-#    - cron: 0 8 * * 5
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
@@ -176,11 +174,11 @@ jobs:
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
-    - name: Remove old Artifacts
-      uses: c-hive/gha-remove-artifacts@v1.2.0
+    - name: Delete workflow runs
+      uses: GitRML/delete-workflow-runs@main
       with:
-        age: '1 day'
-        skip-recent: 3
+        retain_days: 1
+        keep_minimum_runs: 3
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.1.0
