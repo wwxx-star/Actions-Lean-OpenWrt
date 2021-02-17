@@ -20,7 +20,7 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 #rm -rf package/lean/trojan
 
 # 拉取luci-app-smartdns插件
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
 
 # 拉取passwall插件及依赖
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/lienol/brook
