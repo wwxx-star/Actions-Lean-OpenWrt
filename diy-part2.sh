@@ -42,9 +42,6 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns packa
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/naiveproxy package/lienol/naiveproxy
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/lienol/luci-app-passwall
 
-# 删除自带xray-core核心
-#rm -rf package/feeds/packages/xray-core
-
 # 拉取passwall源码
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 #git clone https://github.com/lxhao61/openwrt-passwall.git package/passwall
