@@ -20,7 +20,7 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 #rm -rf package/lean/trojan
 
 # 拉取luci-app-smartdns插件
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
 
 # 拉取passwall插件及依赖
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/lienol/brook
@@ -41,3 +41,13 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns packa
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/lienol/trojan-plus
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/naiveproxy package/lienol/naiveproxy
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/lienol/luci-app-passwall
+
+# 删除自带xray-core核心
+#rm -rf package/feeds/packages/xray-core
+
+# 拉取passwall源码
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+#git clone https://github.com/lxhao61/openwrt-passwall.git package/passwall
+
+# 删除passwall中xray-core核心
+#rm -rf package/passwall/xray-core
