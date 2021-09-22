@@ -63,7 +63,6 @@ jobs:
 
     - name: Load custom feeds
       run: |
-        [ -e 0001-TEST.txt ] && mv 0001-TEST.txt openwrt/ && cd openwrt && patch -p1 < 0001-TEST.txt && cd ..
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
