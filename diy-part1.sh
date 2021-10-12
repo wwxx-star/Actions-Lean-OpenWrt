@@ -29,4 +29,4 @@
 sed -i 's/^\(.*telephony\)/#&/' feeds.conf.default
 
 # 添加openwrt-18.06 telephony源
-sed -i '$a src-git https://github.com/lxhao61/telephony.git' feeds.conf.default
+sed -i '$a src-git telephony https://github.com/lxhao61/telephony.git' feeds.conf.default
