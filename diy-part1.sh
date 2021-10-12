@@ -26,7 +26,7 @@
 #sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main' feeds.conf.default
 
 # 注释掉默认telephony源
-sed -i 's/^\(.*telephony\)/#&/' feeds.conf.default
+#sed -i 's/^\(.*telephony\)/#&/' feeds.conf.default
 
 # 添加openwrt-18.06 telephony源
-sed -i '$a src-git telephony https://github.com/lxhao61/telephony.git' feeds.conf.default
+#sed -i '$a src-git telephony https://github.com/lxhao61/telephony.git' feeds.conf.default
