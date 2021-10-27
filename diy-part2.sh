@@ -11,8 +11,8 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/192.168.6.5/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.1.1/192.168.6.5/g' package/base-files/files/bin/config_generate
 #sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generate
 
 # 取消Lean大登陆密码
