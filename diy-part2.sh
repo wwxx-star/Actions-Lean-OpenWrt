@@ -23,7 +23,7 @@ rm -rf package/lean/trojan
 
 # 拉取fail2ban插件
 #svn co https://github.com/Lienol/openwrt-packages/trunk/net/fail2ban package/feeds/packages/fail2ban
-svn co https://github.com/immortalwrt/packages/trunk/net/fail2ban package/feeds/packages/fail2ban
+#svn co https://github.com/immortalwrt/packages/trunk/net/fail2ban package/feeds/packages/fail2ban
 
 # 拉取luci-app-smartdns插件
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
