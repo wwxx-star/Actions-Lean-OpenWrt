@@ -25,8 +25,8 @@
 # 添加xiaorouji大passwall源
 #sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main' feeds.conf.default
 
-# 注释掉默认telephony源
-#sed -i 's/^\(.*telephony\)/#&/' feeds.conf.default
+# 注释掉lean大默认packages源
+sed -i 's/^\(.*packages\)/#&/' feeds.conf.default
 
-# 添加openwrt-18.06 telephony源
-#sed -i '$a src-git telephony https://github.com/lxhao61/telephony.git' feeds.conf.default
+# 添加修改的packages源
+sed -i '$a src-git packages https://github.com/lxhao61/packages.git' feeds.conf.default
