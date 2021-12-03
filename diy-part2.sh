@@ -19,7 +19,7 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 
 # 拉取fail2ban插件
 #svn co https://github.com/Lienol/openwrt-packages/trunk/net/fail2ban package/feeds/packages/fail2ban
-svn co https://github.com/immortalwrt/packages/trunk/net/fail2ban package/feeds/packages/net/fail2ban
+svn co https://github.com/immortalwrt/packages/trunk/net/fail2ban feeds/packages/net/fail2ban
 
 # 删除原版trojan插件
 rm -rf package/lean/trojan
