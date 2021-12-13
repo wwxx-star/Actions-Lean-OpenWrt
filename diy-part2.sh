@@ -26,6 +26,3 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns packa
 # 拉取passwall源码
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 #git clone https://github.com/lxhao61/openwrt-passwall.git package/passwall
-
-# 删除passwall中xray-core核心
-#rm -rf package/passwall/xray-core
