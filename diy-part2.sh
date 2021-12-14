@@ -18,11 +18,11 @@ sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generat
 sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-settings
 
 # 删除原版trojan插件
-rm -rf package/lean/trojan
-
-# 拉取luci-app-smartdns插件
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
+#rm -rf package/lean/trojan
 
 # 拉取passwall源码
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 #git clone https://github.com/lxhao61/openwrt-passwall.git package/passwall
+
+# 拉取luci-app-smartdns插件
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
