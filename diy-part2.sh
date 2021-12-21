@@ -25,10 +25,10 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
 
 # 删除原版softethervpn插件
-rm -rf feeds/packages/net/softethervpn
+#rm -rf feeds/packages/net/softethervpn
 
 # 拉取softethervpn升级4.38-9760插件
-svn co https://github.com/lxhao61/packages/trunk/net/softethervpn feeds/packages/net/softethervpn
+#svn co https://github.com/lxhao61/packages/trunk/net/softethervpn feeds/packages/net/softethervpn
 
 # 删除原版luci-app-softethervpn插件
 rm -rf package/lean/luci-app-softethervpn
