@@ -13,7 +13,7 @@ name: PassWall Checker
 
 env:
   REPO_URL: https://github.com/xiaorouji/openwrt-passwall.git
-  REPO_BRANCH: main
+  REPO_BRANCH: packages
 
 on:
   workflow_dispatch:
