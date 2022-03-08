@@ -21,6 +21,9 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 #git clone https://github.com/lxhao61/openwrt-passwall.git package/passwall
 
+# 拉取luci-app-passwall插件
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall package/passwall/luci-app-passwall
+
 # 拉取luci-app-smartdns插件
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
 
