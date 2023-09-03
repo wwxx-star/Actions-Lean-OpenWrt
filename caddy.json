@@ -37,12 +37,12 @@
           "routes": [
             {
               "handle": [
-                {
+              	{
                   "handler": "static_response",
                   "headers": {
-                    "Location": [
-                      "https://{http.request.host}{http.request.uri}"
-                    ]
+              	    "Location": [
+              	      "https://{http.request.host}{http.request.uri}"
+              	    ]
                   },
                   "status_code": 301
                 }
@@ -71,22 +71,22 @@
           "routes": [
             {
               "match": [
-                {
+              	{
                   "path": [
                     "/HALdGZ9k"
                   ],
                   "header": {
                     "Connection": [
-                      "*Upgrade*"
+              	      "*Upgrade*"
                     ],
                     "Upgrade": [
-                      "websocket"
+              	      "websocket"
                     ]
                   }
                 }
               ],
               "handle": [
-                {
+              	{
                   "handler": "reverse_proxy",
                   "upstreams": [
                     {
@@ -98,22 +98,22 @@
             },
             {
               "match": [
-                {
+              	{
                   "path": [
                     "/VMLdGZ9k"
                   ],
                   "header": {
                     "Connection": [
-                      "*Upgrade*"
+              	      "*Upgrade*"
                     ],
                     "Upgrade": [
-                      "websocket"
+              	      "websocket"
                     ]
                   }
                 }
               ],
               "handle": [
-                {
+              	{
                   "handler": "reverse_proxy",
                   "upstreams": [
                     {
@@ -125,14 +125,14 @@
             },
             {
               "match": [
-                {
+              	{
                   "path": [
                     "/SeuW56Es"
                   ]
                 }
               ],
               "handle": [
-                {
+              	{
                   "handler": "reverse_proxy",
                   "transport": {
                     "protocol": "http",
@@ -151,7 +151,7 @@
             },
             {
               "match": [
-                {
+              	{
                   "protocol": "grpc",
                   "path": [
                     "/SgSWGZ9k/*"
@@ -159,35 +159,35 @@
                 }
               ],
               "handle": [
-                {
+              	{
                   "handler": "reverse_proxy",
                   "transport": {
-                    "protocol": "http",
-                    "versions": [
+              	    "protocol": "http",
+              	    "versions": [
                       "h2c",
                       "2"
-                    ]
+              	    ]
                   },
                   "upstreams": [
                     {
-                      "dial": "127.0.0.1:2011"
+              	      "dial": "127.0.0.1:2011"
                     }
                   ],
                   "headers": {
-                    "request": {
+              	    "request": {
                       "set": {
                         "X-Real-IP": [
                           "{http.vars.client_ip}"
                         ]
                       }
-                    }
+              	    }
                   }
                 }
               ]
             },
             {
               "handle": [
-                {
+              	{
                   "handler": "forward_proxy",
                   "auth_user_deprecated": "lxhao",
                   "auth_pass_deprecated": "diy1155",
@@ -199,19 +199,19 @@
             },
             {
               "match": [
-                {
+              	{
                   "host": [
                     "itdiy.gq"
                   ]
                 }
               ],
               "handle": [
-                {
+              	{
                   "handler": "subroute",
                   "routes": [
                     {
                       "handle": [
-                        {
+                      	{
                           "handler": "vars",
                           "root": "/home/webdav"
                         }
@@ -219,19 +219,19 @@
                     },
                     {
                       "match": [
-                        {
+                      	{
                           "method": [
                             "GET"
                           ]
                         }
                       ],
                       "handle": [
-                        {
+                      	{
                           "handler": "headers",
                           "response": {
                             "set": {
                               "Strict-Transport-Security": [
-                                "max-age=31536000; includeSubDomains; preload"
+                              	"max-age=31536000; includeSubDomains; preload"
                               ]
                             }
                           }
@@ -240,7 +240,7 @@
                     },
                     {
                       "handle": [
-                        {
+                      	{
                           "handler": "authentication",
                           "providers": {
                             "http_basic": {
@@ -248,7 +248,7 @@
                                 "algorithm": "bcrypt"
                               },
                               "accounts": [
-                                {
+                              	{
                                   "username": "lxhao",
                                   "password": "JDJhJDE0JC9FSGwwOWhKMHhmSFJGN01TaFpDTWUxRlFudUp2L051YmVLMnJUb05lY3dQZFBkVkwuM1dt"
                                 }
@@ -261,14 +261,14 @@
                     },
                     {
                       "match": [
-                        {
+                       	{
                           "method": [
                             "GET"
                           ]
                         }
                       ],
                       "handle": [
-                        {
+                      	{
                           "handler": "file_server",
                           "browse": {}
                         }
@@ -276,7 +276,7 @@
                     },
                     {
                       "handle": [
-                        {
+                      	{
                           "handler": "webdav"
                         }
                       ]
@@ -287,24 +287,24 @@
             },
             {
               "match": [
-                {
+              	{
                   "not": [
                     {
-                      "host": [
-                        "itdiy.gq",
-                        "www.itdiy.gq"
-                      ]
+              	      "host": [
+              	      	"itdiy.gq",
+              	      	"www.itdiy.gq"
+              	      ]
                     }
                   ]
                 }
               ],
               "handle": [
-                {
+              	{
                   "handler": "static_response",
                   "headers": {
-                    "Location": [
-                      "https://www.itdiy.gq{http.request.uri}"
-                    ]
+              	    "Location": [
+              	      "https://www.itdiy.gq{http.request.uri}"
+              	    ]
                   },
                   "status_code": 301
                 }
@@ -312,12 +312,12 @@
             },
             {
               "handle": [
-                {
+              	{
                   "handler": "headers",
                   "response": {
                     "set": {
                       "Strict-Transport-Security": [
-                        "max-age=31536000; includeSubDomains; preload"
+                      	"max-age=31536000; includeSubDomains; preload"
                       ]
                     }
                   }
@@ -353,12 +353,12 @@
               "protocol_min": "tls1.2",
               "protocol_max": "tls1.2",
               "cipher_suites": [
-                "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"
+              	"TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"
               ],
               "curves": [
-                "secp521r1",
-                "secp384r1",
-                "secp256r1"
+              	"secp521r1",
+              	"secp384r1",
+              	"secp256r1"
               ]
             },
             {
@@ -372,15 +372,15 @@
                 ]
               },
               "cipher_suites": [
-                "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
-                "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
-                "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"
+              	"TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+              	"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+              	"TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"
               ],
               "curves": [
-                "x25519",
-                "secp521r1",
-                "secp384r1",
-                "secp256r1"
+              	"x25519",
+              	"secp521r1",
+              	"secp384r1",
+              	"secp256r1"
               ]
             }
           ],
@@ -407,14 +407,14 @@
         "upstream": "memory"
       },
       "users": [
-        "diy2257"
+      	"diy2257"
       ]
     },
     "tls": {
       "certificates": {
         "automate": [
           "*.itdiy.gq",
-          "itdiy.gq"
+        	"itdiy.gq"
         ]
       },
       "automation": {
@@ -455,7 +455,7 @@
     },
     "events": {
       "subscriptions": [
-        {
+      	{
           "events": [
             "cert_obtained"
           ],
@@ -464,18 +464,18 @@
               "handler": "exec",
               "command": "sudo",
               "args": [
-                "systemctl",
-                "restart",
-                "tuic"
+              	"systemctl",
+              	"restart",
+              	"tuic"
               ]
             },
             {
               "handler": "exec",
               "command": "sudo",
               "args": [
-                "systemctl",
-                "restart",
-                "hysteria"
+              	"systemctl",
+              	"restart",
+              	"hysteria"
               ]
             }
           ]
