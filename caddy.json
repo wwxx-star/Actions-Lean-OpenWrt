@@ -1,0 +1,486 @@
+{
+  "admin": {
+    "disabled": true,
+    "config": {
+      "persist": false
+    }
+  },
+  "logging": {
+    "logs": {
+      "default": {
+        "writer": {
+          "output": "file",
+          "filename": "/var/log/caddy/default.log"
+        },
+        "encoder": {
+          "format": "console"
+        },
+        "level": "WARN",
+        "exclude": [
+          "caddy.listeners.trojan",
+          "http.handlers.reverse_proxy"
+        ]
+      }
+    }
+  },
+  "storage": {
+    "module": "file_system",
+    "root": "/home/tls"
+  },
+  "apps": {
+    "http": {
+      "servers": {
+        "srvh1": {
+          "listen": [
+          	":80"
+          ],
+          "routes": [
+          	{
+              "handle": [
+              	{
+                  "handler": "static_response",
+                  "headers": {
+              	    "Location": [
+              	    	"https://{http.request.host}{http.request.uri}"
+              	    ]
+                  },
+                  "status_code": 301
+                }
+              ]
+            }
+          ],
+          "protocols": [
+          	"h1"
+          ]
+        },
+        "srvh2": {
+          "listen": [
+          	"unix/@http2.sock"
+          ],
+          "listener_wrappers": [
+          	{
+              "wrapper": "proxy_protocol"
+            },
+            {
+              "wrapper": "tls"
+            },
+            {
+              "wrapper": "trojan"
+            }
+          ],
+          "routes": [
+          	{
+              "match": [
+              	{
+                  "path": [
+                	  "/HALdGZ9k"
+                  ],
+                  "header": {
+                    "Connection": [
+                  	  "*Upgrade*"
+                    ],
+                    "Upgrade": [
+                    	"websocket"
+                    ]
+                  }
+                }
+              ],
+              "handle": [
+              	{
+                  "handler": "reverse_proxy",
+                  "upstreams": [
+                  	{
+                      "dial": "unix/@vlessws.sock"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "match": [
+              	{
+                  "path": [
+                  	"/VMLdGZ9k"
+                  ],
+                  "header": {
+                    "Connection": [
+                    	"*Upgrade*"
+                    ],
+                    "Upgrade": [
+                    	"websocket"
+                    ]
+                  }
+                }
+              ],
+              "handle": [
+              	{
+                  "handler": "reverse_proxy",
+                  "upstreams": [
+                  	{
+                      "dial": "unix/@vmessws.sock"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "match": [
+              	{
+                  "path": [
+                  	"/SeuW56Es"
+                  ]
+                }
+              ],
+              "handle": [
+              	{
+                  "handler": "reverse_proxy",
+                  "transport": {
+                    "protocol": "http",
+                    "versions": [
+                    	"h2c",
+                    	"2"
+                    ]
+                  },
+                  "upstreams": [
+                  	{
+                      "dial": "unix/@vlessh2c.sock"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "match": [
+              	{
+                  "protocol": "grpc",
+                  "path": [
+                  	"/SgSWGZ9k/*"
+                  ]
+                }
+              ],
+              "handle": [
+              	{
+                  "handler": "reverse_proxy",
+                  "transport": {
+              	    "protocol": "http",
+              	    "versions": [
+              	    	"h2c",
+              	    	"2"
+              	    ]
+                  },
+                  "upstreams": [
+                  	{
+              	      "dial": "127.0.0.1:2011"
+                    }
+                  ],
+                  "headers": {
+              	    "request": {
+                      "set": {
+                        "X-Real-IP": [
+                        	"{http.vars.client_ip}"
+                        ]
+                      }
+                  	}
+                  }
+                }
+              ]
+            },
+            {
+              "handle": [
+              	{
+                  "handler": "forward_proxy",
+                  "auth_user_deprecated": "lxhao",
+                  "auth_pass_deprecated": "diy1155",
+                  "hide_ip": true,
+                  "hide_via": true,
+                  "probe_resistance": {}
+                }
+              ]
+            },
+            {
+              "match": [
+              	{
+                  "host": [
+                  	"itdiy.gq"
+                  ]
+                }
+              ],
+              "handle": [
+              	{
+                  "handler": "subroute",
+                  "routes": [
+                  	{
+                      "handle": [
+                      	{
+                          "handler": "vars",
+                          "root": "/home/webdav"
+                        }
+                      ]
+                    },
+                    {
+                      "match": [
+                      	{
+                          "method": [
+                          	"GET"
+                          ]
+                        }
+                      ],
+                      "handle": [
+                      	{
+                          "handler": "headers",
+                          "response": {
+                            "set": {
+                              "Strict-Transport-Security": [
+                              	"max-age=31536000; includeSubDomains; preload"
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "handle": [
+                      	{
+                          "handler": "authentication",
+                          "providers": {
+                            "http_basic": {
+                              "hash": {
+                                "algorithm": "bcrypt"
+                              },
+                              "accounts": [
+                              	{
+                                  "username": "lxhao",
+                                  "password": "JDJhJDE0JC9FSGwwOWhKMHhmSFJGN01TaFpDTWUxRlFudUp2L051YmVLMnJUb05lY3dQZFBkVkwuM1dt"
+                                }
+                              ],
+                              "hash_cache": {}
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "match": [
+                       	{
+                          "method": [
+                          	"GET"
+                          ]
+                        }
+                      ],
+                      "handle": [
+                      	{
+                          "handler": "file_server",
+                          "browse": {}
+                        }
+                      ]
+                    },
+                    {
+                      "handle": [
+                      	{
+                          "handler": "webdav"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "match": [
+              	{
+                  "not": [
+                  	{
+              	      "host": [
+              	      	"itdiy.gq",
+              	      	"www.itdiy.gq"
+              	      ]
+                    }
+                  ]
+                }
+              ],
+              "handle": [
+              	{
+                  "handler": "static_response",
+                  "headers": {
+              	    "Location": [
+              	    	"https://www.itdiy.gq{http.request.uri}"
+              	    ]
+                  },
+                  "status_code": 301
+                }
+              ]
+            },
+            {
+              "handle": [
+              	{
+                  "handler": "headers",
+                  "response": {
+                    "set": {
+                      "Strict-Transport-Security": [
+                      	"max-age=31536000; includeSubDomains; preload"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "handler": "encode",
+                  "encodings": {
+                    "gzip": {
+                      "level": 4
+                    },
+                    "zstd": {}
+                  },
+                  "prefer": [
+                  	"gzip",
+                  	"zstd"
+                  ]
+                },
+                {
+                  "handler": "file_server",
+                  "root": "/var/www/html"
+                }
+              ]
+            }
+          ],
+          "tls_connection_policies": [
+          	{
+              "match": {
+                "sni": [
+                	"at.itdiy.gq",
+                	"ah.itdiy.gq"
+                ]
+              },
+              "protocol_min": "tls1.2",
+              "protocol_max": "tls1.2",
+              "cipher_suites": [
+              	"TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"
+              ],
+              "curves": [
+              	"secp521r1",
+              	"secp384r1",
+              	"secp256r1"
+              ]
+            },
+            {
+              "match": {
+                "sni": [
+                	"av.itdiy.gq",
+                	"wv.itdiy.gq",
+                	"gh.itdiy.gq",
+                	"www.itdiy.gq",
+                	"itdiy.gq"
+                ]
+              },
+              "cipher_suites": [
+              	"TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+              	"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+              	"TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"
+              ],
+              "curves": [
+              	"x25519",
+              	"secp521r1",
+              	"secp384r1",
+              	"secp256r1"
+              ]
+            }
+          ],
+          "automatic_https": {
+            "disable": true
+          },
+          "trusted_proxies": {
+            "source": "cloudflare",
+            "interval": "12h",
+            "timeout": "15s"
+          },
+          "protocols": [
+          	"h1",
+          	"h2"
+          ]
+        }
+      }
+    },
+    "trojan": {
+      "proxy": {
+        "proxy": "no_proxy"
+      },
+      "upstream": {
+        "upstream": "memory"
+      },
+      "users": [
+      	"diy2257"
+      ]
+    },
+    "tls": {
+      "certificates": {
+        "automate": [
+        	"*.itdiy.gq",
+        	"itdiy.gq"
+        ]
+      },
+      "automation": {
+        "policies": [
+        	{
+            "subjects": [
+            	"*.itdiy.gq"
+            ],
+            "issuers": [
+            	{
+                "module": "zerossl",
+                "email": "751142257@qq.com",
+                "challenges": {
+                  "dns": {
+                    "provider": {
+                      "name": "duckdns",
+                      "api_token": "b8a33cc1-3495-4d07-a1e6-b049bf07988f",
+                      "override_domain": "gqddns.duckdns.org"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "subjects": [
+            	"itdiy.gq"
+            ],
+            "issuers": [
+            	{
+                "module": "zerossl",
+                "email": "751142257@qq.com"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "events": {
+      "subscriptions": [
+      	{
+          "events": [
+          	"cert_obtained"
+          ],
+          "handlers": [
+          	{
+              "handler": "exec",
+              "command": "sudo",
+              "args": [
+              	"systemctl",
+              	"restart",
+              	"tuic"
+              ]
+            },
+            {
+              "handler": "exec",
+              "command": "sudo",
+              "args": [
+              	"systemctl",
+              	"restart",
+              	"hysteria"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
