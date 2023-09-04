@@ -1,6 +1,7 @@
 CONFIG_TARGET_bcm53xx=y
 CONFIG_TARGET_bcm53xx_generic=y
 CONFIG_TARGET_bcm53xx_generic_DEVICE_phicomm_k3=y
+CONFIG_ASTERISK_LIBXSLT_SUPPORT=y
 CONFIG_ASTERISK_LOW_MEMORY=y
 # CONFIG_DRIVER_11AC_SUPPORT is not set
 # CONFIG_JSON_OVERVIEW_IMAGE_INFO is not set
@@ -25,6 +26,7 @@ CONFIG_PACKAGE_asterisk-res-stun-monitor=y
 CONFIG_PACKAGE_bcg729=y
 # CONFIG_PACKAGE_block-mount is not set
 # CONFIG_PACKAGE_brcmfmac-firmware-usb is not set
+CONFIG_PACKAGE_cgi-io=y
 CONFIG_PACKAGE_chinadns-ng=y
 CONFIG_PACKAGE_coreutils=y
 CONFIG_PACKAGE_coreutils-base64=y
@@ -71,10 +73,9 @@ CONFIG_PACKAGE_kmod-sit=y
 CONFIG_PACKAGE_libatomic=y
 CONFIG_PACKAGE_libcap=y
 CONFIG_PACKAGE_libedit=y
+CONFIG_PACKAGE_libiconv-full=y
 CONFIG_PACKAGE_libltdl=y
 CONFIG_PACKAGE_liblua5.3=y
-CONFIG_PACKAGE_libminiupnpc=y
-CONFIG_PACKAGE_libnatpmp=y
 CONFIG_PACKAGE_libncurses=y
 CONFIG_PACKAGE_libpj=y
 CONFIG_PACKAGE_libpjlib-util=y
@@ -89,6 +90,7 @@ CONFIG_PACKAGE_libreadline=y
 CONFIG_PACKAGE_libsqlite3=y
 CONFIG_PACKAGE_libstdcpp=y
 CONFIG_PACKAGE_libxml2=y
+CONFIG_PACKAGE_libxslt=y
 # CONFIG_PACKAGE_luci-app-accesscontrol is not set
 # CONFIG_PACKAGE_luci-app-arpbind is not set
 # CONFIG_PACKAGE_luci-app-filetransfer is not set
@@ -106,8 +108,10 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geodata=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin is not set
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_tuic_client=y
 CONFIG_PACKAGE_luci-app-passwall_Iptables_Transparent_Proxy=y
+CONFIG_PACKAGE_luci-app-phtunnel=y
 # CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng is not set
 # CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-webui is not set
+CONFIG_PACKAGE_luci-app-softethervpn=y
 # CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_BBR_CCA is not set
 # CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_OFFLOADING is not set
 # CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_PDNSD is not set
@@ -115,12 +119,13 @@ CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_SHORTCUT_FE_CM=y
 CONFIG_PACKAGE_luci-app-udpxy=y
 # CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go is not set
 # CONFIG_PACKAGE_luci-app-vsftpd is not set
-CONFIG_PACKAGE_luci-app-zerotier=y
 CONFIG_PACKAGE_luci-compat=y
 CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-phtunnel-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-softethervpn-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-udpxy-zh-cn=y
-CONFIG_PACKAGE_luci-i18n-zerotier-zh-cn=y
 # CONFIG_PACKAGE_luci-lib-fs is not set
+CONFIG_PACKAGE_luci-lib-json=y
 CONFIG_PACKAGE_luci-proto-ipv6=y
 CONFIG_PACKAGE_luci-theme-material=y
 CONFIG_PACKAGE_microsocks=y
@@ -131,7 +136,12 @@ CONFIG_PACKAGE_odhcp6c_ext_cer_id=0
 CONFIG_PACKAGE_odhcpd-ipv6only=y
 CONFIG_PACKAGE_odhcpd_ipv6only_ext_cer_id=0
 # CONFIG_PACKAGE_pdnsd-alt is not set
+CONFIG_PACKAGE_phtunnel=y
 CONFIG_PACKAGE_resolveip=y
+CONFIG_PACKAGE_softethervpn5-bridge=y
+CONFIG_PACKAGE_softethervpn5-client=y
+CONFIG_PACKAGE_softethervpn5-libs=y
+CONFIG_PACKAGE_softethervpn5-server=y
 CONFIG_PACKAGE_tcping=y
 CONFIG_PACKAGE_terminfo=y
 CONFIG_PACKAGE_tuic-client=y
@@ -143,7 +153,6 @@ CONFIG_PACKAGE_v2ray-geosite=y
 # CONFIG_PACKAGE_wireless-regdb is not set
 CONFIG_PACKAGE_xray-core=y
 CONFIG_PACKAGE_xupnpd=y
-CONFIG_PACKAGE_zerotier=y
 CONFIG_SQLITE3_COLUMN_METADATA=y
 CONFIG_SQLITE3_DYNAMIC_EXTENSIONS=y
 CONFIG_SQLITE3_FTS3=y
