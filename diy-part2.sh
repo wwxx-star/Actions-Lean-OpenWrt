@@ -30,10 +30,10 @@ cd -
 #git clone -b luci https://github.com/lxhao61/openwrt-passwall.git package/xiaorouji/luci
 
 # 删除自带phtunnel源码
-rm -rf package/feeds/packages/phtunnel
-rm -rf feeds/packages/net/phtunnel
-rm -rf package/feeds/luci/luci-app-phtunnel
 rm -rf feeds/luci/applications/luci-app-phtunnel
+rm -rf package/feeds/luci/luci-app-phtunnel
+rm -rf feeds/packages/net/phtunnel
+rm -rf package/feeds/packages/phtunnel
 
 # 拉取phtunnel、pgyvpn源码
 git clone https://github.com/OrayOS/OpenOray.git package/OpenOray
