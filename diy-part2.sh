@@ -29,15 +29,6 @@ git checkout d1e618220a9a0a4b73d536101f452a2f4cf14861
 cd -
 #git clone -b luci https://github.com/lxhao61/openwrt-passwall.git package/xiaorouji/luci
 
-# 删除自带phtunnel源码
-#rm -rf feeds/luci/applications/luci-app-phtunnel
-#rm -rf package/feeds/luci/luci-app-phtunnel
-#rm -rf feeds/packages/net/phtunnel
-#rm -rf package/feeds/packages/phtunnel
-
-# 拉取phtunnel、pgyvpn源码
-#git clone https://github.com/OrayOS/OpenOray.git package/OpenOray
-
 # 拉取luci-app-smartdns插件
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
 
