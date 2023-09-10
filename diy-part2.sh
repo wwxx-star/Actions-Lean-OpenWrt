@@ -24,7 +24,7 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 #cd -
 git clone -b packages https://github.com/lxhao61/openwrt-passwall.git package/xiaorouji/packages
 cd package/xiaorouji/packages
-git checkout 970f3a590b3b211355e3a10b396815b859d8cfe5
+git checkout 83edb2e50a0cf440b2dcfbdff9bab5fd799859e4
 cd -
 
 #git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git package/xiaorouji/luci
