@@ -30,7 +30,7 @@ git checkout d1e618220a9a0a4b73d536101f452a2f4cf14861
 cd -
 
 # 拉取ShadowSocksR Plus+源码
-#git clone -b master https://github.com/fw876/helloworld.git package/helloworld
+#git clone -b master https://github.com/fw876/helloworld.git package/feeds/helloworld
 
 # 拉取luci-app-smartdns插件
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
