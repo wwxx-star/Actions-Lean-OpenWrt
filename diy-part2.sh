@@ -31,11 +31,11 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luc
 #cd -
 
 # 拉取ShadowSocksR Plus+源码
-git clone -b master https://github.com/fw876/helloworld.git package/helloworld
+# git clone -b master https://github.com/fw876/helloworld.git package/helloworld
 git clone  https://github.com/Zane-E/luci-app-adguardhome.git  package/luci-app-adguardhome
 # 拉取luci-app-smartdns插件
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
-
+# svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lienol/luci-app-smartdns
+git clone -b master  https://github.com/vernesong/OpenClash.git package/luci-app-openclash
 # 删除原版luci-app-softethervpn插件
 #rm -rf feeds/luci/applications/luci-app-softethervpn
 
