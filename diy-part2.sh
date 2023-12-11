@@ -29,7 +29,8 @@ sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generat
 #cd package/passwall/luci
 #git checkout d1e618220a9a0a4b73d536101f452a2f4cf14861
 #cd -
-git clone https://github.com/wwxx-star/openwrt-packages1  package/openwrt-packages
+#git clone https://github.com/wwxx-star/openwrt-packages1  package/openwrt-packages
+git clone https://github.com/muink/openwrt-packages  package/openwrt-packages
 # 拉取ShadowSocksR Plus+源码
 # git clone -b master https://github.com/fw876/helloworld.git package/helloworld
 ##git clone  https://github.com/Zane-E/luci-app-adguardhome.git  package/luci-app-adguardhome
